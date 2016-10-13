@@ -1,0 +1,317 @@
+/*bigger top nav to make room for logo*/
+#top-nav{
+	height:102.5px !important;
+}
+/*resizing logo, making it smaller, other brand stuff, font size,family, and weight, also contains right nav bar stuff*/
+#logo{
+	margin-top:12px;
+	width:75px;
+	height:75px;
+}
+
+
+
+h1 {     
+	font-size:25px;     
+	margin-left:100px;     
+	margin-top:-50px;
+	vertical-align:bottom;
+	color:white; 
+	font-family: 'Orbitron', sans-serif;
+	font-size:25px;
+} 
+
+a.link {
+    padding-top:40px !important;
+    height:100px !important;
+    color:#dddddd !important;
+    font-family: 'Poppins', sans-serif;
+    font-size:15px;
+}
+
+a.links {
+	height:100px !important;
+	padding-top:40px !important;
+	color:#dddddd !important;
+	font-family: 'Poppins', sans-serif;
+	font-size:15px;
+}
+.dropdown-text {
+	font-family: 'Poppins', sans-serif;
+	font-size:13.5px;
+
+}
+
+/*green underlines on links*/
+
+
+
+/*collapsing stuff*/
+
+@media (min-width: 770px) and (max-width: 995px) {
+    .navbar-collapse.collapse {
+        display: none !important;
+    }
+    .navbar-collapse.collapse.in {
+        display:inline-block !important;
+    }
+    .navbar-header .collapse, .navbar-toggle {
+        display:block !important;
+    }
+    .navbar-header {
+        float:none;
+    }
+    h1 {
+    	margin-top:47px;
+    }
+   
+	button {
+		margin-bottom:18px !important;
+	}
+
+    ul.dropdown-menu {
+    	position:50px;
+    }
+}
+/*making collapsed dropdown nav have a smaller height+different padding*/
+@media (max-width: 767px) {
+    .navbar-nav > li > a {
+   		padding-top: 10px !important;
+    	padding-bottom: 10px !important;
+    }
+    a.dropdown-toggle.links {
+    	height:50px !important;
+    }
+    a.links{
+    	height:50px !important;
+    	color:white !important;
+    }
+    a.link{
+    	height:50px !important;
+    	color:white !important;
+    }
+}
+/*No Scrolling for navbar collapsed menu*/
+
+.navbar-collapse.in {
+    overflow: hidden;
+    max-height: none !important;
+    height: auto !important;
+    background-color:#222;
+}
+
+/*making dropdown link scroll down when clicked */
+.dropdown .dropdown-menu {
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -ms-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    transition: all 0.4s;
+
+    max-height: 0;
+    display: block;
+    overflow: hidden;
+    opacity: 0;
+}
+
+.dropdown.open .dropdown-menu {
+    max-height: 300px;
+    opacity: 1;
+}
+
+
+
+
+/*making dropdown menu and other links centered and button too*/
+
+
+b{
+	margin-left:5px !important;
+}
+
+.navbar-brand {
+	padding:0px;
+}
+
+.menu-button{
+	margin-top:48px !important;
+	margin-bottom:;
+}
+
+/*All Navbar CSS ENDS HERE-----------------------------------*/
+/*Carousel CSS begins HERE-----------------------------------*/
+.slide {
+	padding-top:103px;
+}
+/*Removing navbar margin-------------------------------------*/
+.navbar {
+	margin-bottom:0px;
+}
+/*Resizing images*/
+
+.Tyr {
+	width:1920px;
+	height:1080px;
+}
+
+.World-Championship{
+	width:1920px;
+	height:1080px;
+}
+/*Adding captions*/
+.team-header {
+	font-family: 'Poppins', sans-serif;	
+	color:white;
+	font-size:27px;
+	text-align:center;
+	width:150px;
+	background-color:#333333;
+	padding-top:10px;
+	padding-bottom:10px;
+}
+.tyr-header {
+	font-family: 'Poppins', sans-serif;	
+	color:white;
+	font-size:27px;
+	text-align:center;
+	width:230px;
+	background-color:#333333;
+	padding:15px;
+}
+.championships-header {
+	font-family: 'Poppins', sans-serif;	
+	color:white;
+	font-size:27px;
+	text-align:center;
+	width:245px;
+	background-color:#333333;
+	padding:15px;
+}
+
+
+/*Carousel CSS ENDS------------------------------------------*/
+/*Entering About Us Zone-------------------------------------*/
+.first-container {
+	padding-top:75px;
+}
+hr {
+	border:1px solid #333333;
+	margin-top:75px;
+}
+
+.about-us {
+	font-family: 'Poppins', sans-serif;
+	font-size:45px;
+	margin-top:10px;
+}
+.FIRST{
+	padding-top:50px;
+	font-family: 'Poppins', sans-serif;
+	font-size:31.5px;
+}
+
+.paragraph-links:hover {
+	text-decoration:none;
+}
+
+p.about-us {
+	font-family: 'Poppins', sans-serif;
+	font-size:20px;
+	padding-top:15px;
+}
+/*resizing picture*/
+.engineering {
+	padding-top:15px;
+	width:350px;
+	height:285px;
+}
+.firstimage {
+	width:390px;
+	height:308px;
+}
+
+.hr-below-first {
+	margin-top:70px;
+}
+/*About Us Zone Ends Here -----------------------------------*/
+/*Entering Subteams Zone ------------------------------------*/
+
+.subteams {
+	text-align:center;
+	font-family: 'Poppins', sans-serif;
+	font-size:45px;
+	margin-top:10px;
+	margin-bottom:50px;
+}
+
+/*resizing images and adding effects*/
+
+img.img-circle {
+	width:70%;
+	height:70%;
+	margin-left:52px;
+	border:4px solid transparent;
+}
+
+img.img-circle:hover {
+	border-color:#006400;
+}
+
+/*text below image resizing etc. and padding*/
+h4 {
+	text-align:center;
+	font-family: 'Poppins', sans-serif;
+	margin-top:20px;
+}
+.program{
+	margin-left:10px;
+}
+.bot-sub {
+	padding-top:30px;
+}
+/*Paragraph Stuff*/
+.paragraph-circle {
+	font-family: 'Poppins', sans-serif;
+	font-size:14px;
+}
+
+/*Subteams Zone Ends Here -----------------------------------*/
+/*Entering parallax zone*/
+.sponsorsimg {
+	0width:100%;
+	width:1661.5px;
+	margin-top:105px;
+}
+.sponsors-container{
+	margin-left:0px;
+	margin-right:0px;
+	padding-right:0px;
+	padding-left:0px;
+}
+
+/*Parallax zone ends here*/
+/*Entering Footer CSS zone-----------------------------------*/
+.navbar-static-bottom {
+	margin-top:100px;
+}
+
+p.footer{
+	font-family: 'Poppins', sans-serif;
+	color:white;
+	font-size:13px;
+}
+
+div.navbar.navbar-inverse.navbar-static-bottom {
+	margin-bottom:0px;
+}
+
+/*for the icons:twiiter, facebook*/
+.navbar-text > a.twitter{
+	text-decoration:none;
+	color:white;
+	margin-left:7px;
+}
+.foot {
+	padding-top:15px;
+}
+/*All Footer CSS ENDS HERE----------------------------------*/
