@@ -4,21 +4,20 @@
 }
 /*resizing logo, making it smaller, other brand stuff, font size,family, and weight, also contains right nav bar stuff*/
 #logo{
-	margin-top:12px;
-	width:75px;
-	height:75px;
+	margin-top:20px;
+	width:60px;
+	height:60px;
 }
 
 
 
-h1 {     
-	font-size:25px;     
+h1 {          
 	margin-left:100px;     
-	margin-top:-50px;
+	margin-top:-40px;
 	vertical-align:bottom;
 	color:white; 
 	font-family: 'Poppins', sans-serif;
-	font-size:30px;
+	font-size:23px;
 } 
 
 a.link {
@@ -144,10 +143,8 @@ b{
 	padding-top:80px;
 }
 /*Removing navbar margin-------------------------------------*/
-.navbar {
-	margin-bottom:0px;
-}
-/*Resizing images*/
+
+
 
 
 /*Adding captions*/
