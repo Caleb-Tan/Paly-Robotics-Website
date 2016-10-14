@@ -142,8 +142,17 @@ b{
 .slide {
 	padding-top:80px;
 }
-/*Removing navbar margin-------------------------------------*/
-
+/*getting rid of txt when at small size-------------------------------------*/
+@media (max-width: @screen-xs) {
+	.carousel-caption h2{
+		font-size:10px;
+	}
+}
+@media (min-width: @screen-sm) {
+	.carousel-caption h2{
+		font-size:10px;
+	}
+}
 
 
 
