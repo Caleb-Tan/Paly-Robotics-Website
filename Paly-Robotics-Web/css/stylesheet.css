@@ -42,17 +42,18 @@ a.links {
 }
 
 /*green underlines on links*/
-a.links{
-	border-bottom: green transparent 4px;
+.links{
+	border-bottom: green transparent 3px;
 }
-a.links:hover{
-	border-bottom: green solid 4px;
+.links:hover{
+	border-bottom: green solid 3px;
 	transition:0.1s;
 }
-a.active {
-	border-bottom:green solid 4px;
+.home{
+	border-bottom:green solid 3px;
 	background-color:#222 !important;
 }
+
 /*collapsing stuff*/
 
 @media (min-width: 770px) and (max-width: 995px) {
@@ -89,7 +90,7 @@ a.active {
     a.dropdown-toggle.links {
     	height:50px !important;
     }
-    a.links{
+    a.home{
     	height:50px !important;
     	color:white !important;
     }
@@ -97,7 +98,6 @@ a.active {
     	height:50px !important;
     	color:white !important;
     }
-
 
 }
 /*No Scrolling for navbar collapsed menu*/
