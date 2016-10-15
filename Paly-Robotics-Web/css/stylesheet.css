@@ -198,7 +198,7 @@ hr {
 	margin-top:75px;
 }
 
-.about-us {
+h3.about-us {
 	font-family: 'Poppins', sans-serif;
 	font-size:45px;
 	margin-top:10px;
@@ -280,20 +280,20 @@ h4.web {
 }
 
 /*Subteams Zone Ends Here -----------------------------------*/
-/*Entering parallax zone*/
-.sponsorsimg {
-	0width:100%;
-	width:1661.5px;
-	margin-top:105px;
-}
-.sponsors-container{
-	margin-left:0px;
-	margin-right:0px;
-	padding-right:0px;
-	padding-left:0px;
-}
+/*Entering sponsors zone--------------------------------------*/
 
-/*Parallax zone ends here*/
+
+h3.sponsorsh3{
+	font-size:45px;
+	font-family: 'Poppins', sans-serif;
+	margin-top:10px;
+}
+p.p-sponsors{
+	font-size:20px;
+	font-family: 'Poppins', sans-serif;
+	margin-top:20px;
+}
+/*Sponsors zone ends here------------------------------------*/
 /*Entering Footer CSS zone-----------------------------------*/
 .navbar-static-bottom {
 	margin-top:100px;
