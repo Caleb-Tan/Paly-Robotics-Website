@@ -5,15 +5,15 @@
 /*resizing logo, making it smaller, other brand stuff, font size,family, and weight, also contains right nav bar stuff*/
 #logo{
 	margin-top:20px;
-	width:60px;
-	height:60px;
+	width:70px;
+	height:70px;
 }
 
 
 
 h1 {          
 	margin-left:100px;     
-	margin-top:-40px;
+	margin-top:-45px;
 	vertical-align:bottom;
 	color:white; 
 	font-family: 'Poppins', sans-serif;
@@ -163,8 +163,6 @@ b{
 	color:white;
 	font-size:27px;
 	text-align:center;
-	width:150px;
-	background-color:#333333;
 	padding-top:10px;
 	padding-bottom:10px;
 }
@@ -173,8 +171,6 @@ b{
 	color:white;
 	font-size:27px;
 	text-align:center;
-	width:230px;
-	background-color:#333333;
 	padding:15px;
 }
 .championships-header {
@@ -182,8 +178,7 @@ b{
 	color:white;
 	font-size:27px;
 	text-align:center;
-	width:245px;
-	background-color:#333333;
+
 	padding:15px;
 }
 
