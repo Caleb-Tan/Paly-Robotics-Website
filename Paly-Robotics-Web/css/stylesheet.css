@@ -49,8 +49,8 @@ a.links:hover{
 	border-bottom: green solid 4px;
 	transition:0.1s;
 }
-.active {
-	border-bottom:green solid 2.5px;
+a.active {
+	border-bottom:green solid 4px;
 	background-color:#222 !important;
 }
 /*collapsing stuff*/
