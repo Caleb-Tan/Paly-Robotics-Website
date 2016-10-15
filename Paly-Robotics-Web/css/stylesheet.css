@@ -20,7 +20,7 @@ h1 {
 	font-size:23px;
 } 
 
-a.link {
+a.active {
     padding-top:40px !important;
     height:100px !important;
     color:#dddddd !important;
@@ -42,9 +42,17 @@ a.links {
 }
 
 /*green underlines on links*/
-
-
-
+a.links{
+	border-bottom: green transparent 4px;
+}
+a.links:hover{
+	border-bottom: green solid 4px;
+	transition:0.1s;
+}
+.active {
+	border-bottom:green solid 2.5px;
+	background-color:#222 !important;
+}
 /*collapsing stuff*/
 
 @media (min-width: 770px) and (max-width: 995px) {
@@ -61,7 +69,7 @@ a.links {
         float:none;
     }
     h1 {
-    	margin-top:47px;
+    	margin-top:-40px;
     }
    
 	button {
@@ -85,10 +93,12 @@ a.links {
     	height:50px !important;
     	color:white !important;
     }
-    a.link{
+    a.links{
     	height:50px !important;
     	color:white !important;
     }
+
+
 }
 /*No Scrolling for navbar collapsed menu*/
 
@@ -143,16 +153,7 @@ b{
 	padding-top:80px;
 }
 /*getting rid of txt when at small size-------------------------------------*/
-@media (max-width: @screen-xs) {
-	.carousel-caption h2{
-		font-size:10px;
-	}
-}
-@media (min-width: @screen-sm) {
-	.carousel-caption h2{
-		font-size:10px;
-	}
-}
+
 
 
 
@@ -205,7 +206,7 @@ hr {
 .FIRST{
 	padding-top:50px;
 	font-family: 'Poppins', sans-serif;
-	font-size:31.5px;
+	font-size:40px;
 }
 
 .paragraph-links:hover {
@@ -261,11 +262,16 @@ h4 {
 	font-family: 'Poppins', sans-serif;
 	margin-top:20px;
 }
-.program{
-	margin-left:10px;
-}
+
 .bot-sub {
 	padding-top:30px;
+}
+
+h4.art{
+	margin-right:5px;
+}
+h4.web {
+	margin-left:10px;
 }
 /*Paragraph Stuff*/
 .paragraph-circle {
