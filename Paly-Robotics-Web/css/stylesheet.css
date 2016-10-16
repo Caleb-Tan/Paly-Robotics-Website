@@ -293,13 +293,13 @@ p.p-sponsors{
 /*Sponsors zone ends here------------------------------------*/
 /*Buttons ---------------------------------------------------*/
 .btn {
-    padding: 10px 20px;
+    padding: 20px;
     background-color: green;
     color: #f1f1f1;
     font-family: 'Poppins', sans-serif;
     border-radius: 0;
+    font-size:20px;
     transition: .2s;
-    
 }
 
 /* On hover, the color of .btn will transition to white with black text */
@@ -309,11 +309,14 @@ p.p-sponsors{
     color: #000;
     font-family: 'Poppins', sans-serif;
 }
-
+hr.sponsorshr {
+	margin-top:37px;
+	margin-bottom:35px;
+}
 /*Buttons Ends HERE -----------------------------------------*/
 /*Entering Footer CSS zone-----------------------------------*/
 .navbar-static-bottom {
-	margin-top:100px;
+	margin-top:35px;
 }
 
 p.footer{
