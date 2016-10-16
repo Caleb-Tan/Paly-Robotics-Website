@@ -25,10 +25,10 @@
 
 </head>
 
-<body>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
 
 	<div id="top-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-		<div class="container">
+		<div class="container naver">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle menu-button" data-toggle="collapse" data-target=".navbar-collapse">
 		   			<span class="sr-only">Toggle navigation</span>
@@ -36,16 +36,16 @@
 		   			<span class="icon-bar"></span>
 		   			<span class="icon-bar"></span>
    				</button>
-I CAN SEE YOU
+
 	   			<a class="navbar-brand" href="index.html">
 	   			<span><img id="logo" src="https://avatars3.githubusercontent.com/u/1227303?v=3&s=280"></span><span><h1>Paly Robotics</h1></span></a>
    			</div>
    			<div class="navbar-collapse collapse">
    				<ul class="nav navbar-nav navbar-right ">
-   					<li class="active home"><a class="active home" href="#">Home</a></li>
-   					<li class="links"><a class="links" href="#">About Us</a></li>
-   					<li class="links"><a class="links" href="#">Subteams</a></li>
-   					<li class="links"><a class="links" href="#">Sponsors</a></li>
+   					<li class="active home"><a class="active home" href="#Home">Home</a></li>
+   					<li class="links"><a class="links" href="#AboutUs">About Us</a></li>
+   					<li class="links"><a class="links" href="#Subteams">Subteams</a></li>
+   					<li class="links"><a class="links" href="#Sponsors">Sponsors</a></li>
    					<li class="dropdown links">
    						<a ref="#" class="dropdown-toggle links" data-toggle="dropdown">More<b class="caret"></b></a>
    						<ul class="dropdown-menu">
@@ -65,6 +65,8 @@ I CAN SEE YOU
    </div>
    <!-- Navbar stuff ends here////////////////////////////////////////////// -->
    <!-- Carousel stuff starts here///////////////////////////////////////// -->
+<div id="Home">
+</div>
 <div id="myCarousel" class="carousel slide" data-ride="carousel" interval="6000">
   <!-- Indicators -->
   <ol class="carousel-indicators">
@@ -116,7 +118,7 @@ I CAN SEE YOU
 
    <!-- Carousel stuff ends here/////////////////////////////////////////// -->
    <!-- Grid System (ABOUT US) begins here///////////////////////////////// -->
-   <div class="container first-container">
+   <div class="container first-container" id="AboutUs">
    		<div class="col-md-12">
    			<hr>
    		</div>
@@ -134,10 +136,11 @@ I CAN SEE YOU
    			<h3 class="FIRST">FIRST</h3>
    			<p class="about-us">The Paly Robotics team is happy to have been a part of FIRST for 20 years. FIRST, or For Inspiration and Recognition of Science and Technology, has a term "gracious professionalism" that we believe everyone should abide by. To read more about FIRST go to our <a class="paragraph-links" href="FIRST-page.html">FIRST page</a> or look at their <a class="paragraph-links" href="http://www.firstinspires.org/">website.</a></p>
    		</div>
-   		<div class="col-md-12">
-   			<hr class="hr-below-first">
+   		<div class="col-md-12" id="Subteams">
+        <hr class="hr-below-first">
    		</div>
    </div>
+   
    <!-- (ABOUT US) ENDS HERE/////////////////////////////////////////////// -->
    <!-- (SUBTEAMS) begins here///////////////////////////////////////////// -->
    <div class="container">
@@ -184,7 +187,7 @@ I CAN SEE YOU
 	       <hr class="sponsorshr">
 	   	</div>
       <div class="col-md-6">
-          <h3 class="sponsorsh3">Sponsors</h3>
+          <h3 class="sponsorsh3" id="Sponsors">Sponsors</h3>
           <p class="p-sponsors">Our robotics team needs money to be able to thrive, and for this reason we depend on our gracious sponsors. We welcome donations of all amounts. To view our sponsors check out our <a href="sponsors-page.html" class="paragraph-links">Sponsors</a> page, and if you wish to donate money and support Paly Robotics, please go to our <a href="" class="paragraph-links">Sponsor Us</a> page.</p>
           
       </div>
@@ -213,9 +216,9 @@ I CAN SEE YOU
     			<p class="footer">© Paly Robotics 2016</p>
     		</div>
     		<div class="navbar-text pull-right">
-    			<a href="https://www.facebook.com/PalyRobotics/" target="_blank"><i class="fa fa-facebook-square fa-2x"></i></a>
-    			<a class="twitter" href="https://twitter.com/frc8?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank"><i class="fa fa-twitter fa-2x"></i></a>
-
+    			<a href="https://www.facebook.com/PalyRobotics/" target="_blank"><i class="fa fa-facebook-square fa-2x facebook"></i></a>
+    			<a href="https://twitter.com/frc8?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank"><i class="fa fa-twitter fa-2x twitter twitter"></i></a>
+          <a href="https://www.youtube.com/channel/UCxDYmpiPO5we91MfFKfWzsQ" target="_blank"><i class="fa fa-youtube-play fa-2x youtube"></i></a>
     		</div>
     	</div>
     </div>
@@ -229,5 +232,32 @@ I CAN SEE YOU
     <script src="js/bootstrap.min.js"></script>
     
   </body>
+  
+  <script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
 
+  // Make sure this.hash has a value before overriding default behavior
+  if (this.hash !== "") {
+
+    // Prevent default anchor click behavior
+    event.preventDefault();
+
+    // Store hash
+    var hash = this.hash;
+
+    // Using jQuery's animate() method to add smooth page scroll
+    // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+    $('html, body').animate({
+      scrollTop: $(hash).offset().top
+    }, 900, function(){
+
+      // Add hash (#) to URL when done scrolling (default click behavior)
+      window.location.hash = hash;
+      });
+    } // End if 
+  });
+})
+</script>
 </html>
