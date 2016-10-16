@@ -291,6 +291,26 @@ p.p-sponsors{
 	margin-top:20px;
 }
 /*Sponsors zone ends here------------------------------------*/
+/*Buttons ---------------------------------------------------*/
+.btn {
+    padding: 10px 20px;
+    background-color: green;
+    color: #f1f1f1;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 0;
+    transition: .2s;
+    
+}
+
+/* On hover, the color of .btn will transition to white with black text */
+.btn:hover, .btn:focus {
+    border: 1px solid #333;
+    background-color: #fff;
+    color: #000;
+    font-family: 'Poppins', sans-serif;
+}
+
+/*Buttons Ends HERE -----------------------------------------*/
 /*Entering Footer CSS zone-----------------------------------*/
 .navbar-static-bottom {
 	margin-top:100px;
