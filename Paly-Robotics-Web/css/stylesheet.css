@@ -51,10 +51,10 @@ a.links {
 	border-bottom: green solid 3px;
 	transition:0.15s;
 }
-.active{
-	border-bottom:green solid 3px;
-}
 
+li.active{
+ 	border-bottom:green solid 3px;
+ }
 /*collapsing stuff*/
 
 @media (min-width: 770px) and (max-width: 995px) {
@@ -188,6 +188,9 @@ b{
 /*Entering About Us Zone-------------------------------------*/
 .first-container {
 	padding-top:75px;
+}
+div#AboutUs {
+	padding-bottom:20px;
 }
 hr {
 	border:1px solid #333333;
