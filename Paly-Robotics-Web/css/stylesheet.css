@@ -34,7 +34,7 @@ h1 {
 	margin-top:-45px;
 	vertical-align:bottom;
 	color:white; 
-	font-family: 'Poppins', sans-serif;
+	font-family: 'Righteous', cursive;
 	font-size:23px;
 } 
 
@@ -176,7 +176,7 @@ b{
 /*All Navbar CSS ENDS HERE-----------------------------------*/
 /*Carousel CSS begins HERE-----------------------------------*/
 .slide {
-	padding-top:103px;
+	padding-top:102px;
 }
 /*getting rid of txt when at small size-------------------------------------*/
 
@@ -211,9 +211,7 @@ b{
 
 /*Carousel CSS ENDS------------------------------------------*/
 /*Entering About Us Zone-------------------------------------*/
-.first-container {
-	padding-top:75px;
-}
+
 div#AboutUs {
 	padding-bottom:20px;
 }
@@ -254,7 +252,7 @@ p.about-us {
 }
 
 .hr-below-first {
-	margin-top:70px;
+	margin-top:30px;
 }
 /*About Us Zone Ends Here -----------------------------------*/
 /*Entering Subteams Zone ------------------------------------*/
@@ -323,6 +321,7 @@ p.p-sponsors{
     padding: 20px;
     background-color: green;
     color: #f1f1f1;
+    border-color:#222;
     font-family: 'Poppins', sans-serif;
     border-radius: 0;
     font-size:20px;
@@ -341,6 +340,13 @@ hr.sponsorshr {
 	margin-bottom:35px;
 }
 /*Buttons Ends HERE -----------------------------------------*/
+/*ScrollSpy--------------------------------------------------*/
+#AboutUs {
+	padding-top:50px;
+}
+#Subteams {
+	padding-top:90px;
+}
 /*Entering Footer CSS zone-----------------------------------*/
 .navbar-static-bottom {
 	margin-top:35px;
@@ -376,5 +382,11 @@ i:hover {
 i {
 	margin-left:7px;
 
+}
+/*for arrow*/
+.glyphicon {
+	color:green;
+	width:30px;
+	height:30px;
 }
 /*All Footer CSS ENDS HERE----------------------------------*/
