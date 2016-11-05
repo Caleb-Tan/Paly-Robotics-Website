@@ -193,30 +193,19 @@ b{
 .team-header {
 	font-family: 'Poppins', sans-serif;	
 	color:white;
-	font-size:27px;
+	font-size:50px;
 	text-align:center;
 	padding-top:10px;
-	padding-bottom:10px;
+	padding-bottom:385px;
 }
-.tyr-header {
-	font-family: 'Poppins', sans-serif;	
-	color:white;
-	font-size:27px;
-	text-align:center;
-	padding:15px;
-}
-.championships-header {
-	font-family: 'Poppins', sans-serif;	
-	color:white;
-	font-size:27px;
-	text-align:center;
 
-	padding:15px;
-}
 
 
 /*Carousel CSS ENDS------------------------------------------*/
 /*Entering About Us Zone-------------------------------------*/
+.About-us-top {
+	padding-bottom:20px;
+}
 
 div#AboutUs {
 	padding-bottom:20px;
@@ -253,8 +242,10 @@ p.about-us {
 	height:285px;
 }
 .firstimage {
-	width:390px;
-	height:308px;
+	width:325px;
+	height:256px;
+	margin-left:50px;
+	margin-top:35px;
 }
 
 .hr-below-first {
@@ -351,7 +342,7 @@ hr.sponsorshr {
 	padding-top:50px;
 }
 #Subteams {
-	padding-top:90px;
+	padding-top:70px;
 }
 /*Entering Footer CSS zone-----------------------------------*/
 .navbar-static-bottom {
