@@ -51,7 +51,7 @@
 						<ul class="dropdown-menu">
 							<li><a class="dropdown-text" href="FIRST-page.html">FIRST</a></li>
 							<li><a class="dropdown-text" href="#">Calendar</a></li>
-							<li><a class="dropdown-text" href="resources-page.html">Resources</a></li>
+							<li><a class="dropdown-text" href="Resources-page.html">Resources</a></li>
 							<li><a class="dropdown-text" href="#">Art</a></li>
 							<li><a class="dropdown-text" href="ZeroRobotics-page.html">Zero</a></li>
 							<li><a class="dropdown-text" href="#">Summer Camp</a></li>
@@ -221,7 +221,6 @@
 			<h3 class="sponsorsh3" id="Sponsors">Sponsors</h3>
 			<p class="p-sponsors">Our robotics team needs money to be able to thrive, and for this reason we depend on our gracious sponsors. We welcome
 				donations of all amounts. To view our sponsors check out our <a href="sponsors-page.html" class="paragraph-links">Sponsors</a>				page, and if you wish to donate money and support Paly Robotics, you can <a href="" class="paragraph-links">Sponsor Us Here</a>				.</p>
-
 		</div>
 		<div class="col-md-12 sponsors-hr">
 			<hr class="sponsorshr">
@@ -425,22 +424,17 @@
 $(document).ready(function(){
   // Add smooth scrolling to all links in navbar + footer link
   $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
-
   // Make sure this.hash has a value before overriding default behavior
   if (this.hash !== "") {
-
     // Prevent default anchor click behavior
     event.preventDefault();
-
     // Store hash
     var hash = this.hash;
-
     // Using jQuery's animate() method to add smooth page scroll
     // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
     $('html, body').animate({
       scrollTop: $(hash).offset().top - 64
     }, 900, function(){
-
       // Add hash (#) to URL when done scrolling (default click behavior)
       window.location.hash = hash;
       });
@@ -452,6 +446,10 @@ $(document).ready(function(){
 <style>
 	p {
 		font-family:'Poppins',sans-serif;
+	}
+	/*making the navbar hte same width as normal*/
+	div#top-nav.navbar.navbar-inverse.navbar-fixed-top {
+		width:100%;
 	}
 </style>
 </html>
