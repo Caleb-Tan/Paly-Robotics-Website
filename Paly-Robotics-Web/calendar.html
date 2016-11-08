@@ -1,0 +1,25 @@
+
+<html>
+	<head>
+		<link rel='stylesheet' href='fullcalendar/fullcalendar.css'/>
+		<script src='fullcalendar/lib/jquery.min.js'"></script>
+		<script src='fullcalendar/lib/moment.min.js'></script>
+		<script src='fullcalendar/fullcalendar.js'></script>
+		<script type='text/javascript' src='fullcalendar/gcal.js' onerror="imgError()"></script>
+		<script type='text/javascript'>
+
+			$(document).ready(function() {
+    			$('#calendar').fullCalendar({
+        			googleCalendarApiKey: 'AIzaSyDIQZLuITK90tlTtdHN4cSkdLW9aRznnL4',
+        			events: {
+            			googleCalendarId: 'db25n7oev1at726gljle5d784c@group.calendar.google.com'
+        			}
+    			});
+			});
+
+		</script>
+	</head>
+	
+    <body>
+        <div id='calendar'></div>
+    </body>
