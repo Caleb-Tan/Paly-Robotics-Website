@@ -17,6 +17,30 @@
 body .fc { /* extra precedence to overcome jqui */
 	font-size: 1em;
 }
+.fc-unthemed{
+	font-family:'Poppins',sans-serif !important;
+}
+.fc-content{
+	padding-top: 8px !important;
+	padding-bottom: 8px !important;
+	padding-left: 8px !important;
+	padding-right: 8px !important;
+
+	
+}
+.fc-title{
+	text-align: center !important;
+	color: white !important;
+}
+.fc-event{
+	background-color: rgb(41,88,44) !important;
+}
+.fc-unthemed .fc-today{
+	background-color: grey !important;
+}
+
+
+
 
 
 /* Colors
@@ -723,7 +747,7 @@ tr:first-child > td > .fc-day-grid-event {
 }
 
 .fc-day-grid-event .fc-content { /* force events to be one-line tall */
-	white-space: nowrap;
+
 	overflow: hidden;
 }
 
