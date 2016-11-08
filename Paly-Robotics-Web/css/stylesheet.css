@@ -1,4 +1,4 @@
-/*full carousel pics*/
+/*full  pics*/
 html, body{
 	height:100%;
 }
@@ -185,6 +185,57 @@ b{
 	padding-top:102px;
 }
 /*getting rid of txt when at small size-------------------------------------*/
+.carousel-fade .carousel-inner .item {
+ 	opacity:0;
+ 	transition:0.5s;
+}
+
+.carousel-fade .carousel-inner .active {
+  opacity: 0;
+}
+
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right {
+  left: 0;
+  opacity: 0;
+  z-index: 1;
+}
+
+.carousel-fade .carousel-inner .next.left,
+.carousel-fade .carousel-inner .prev.right {
+  opacity: 1;
+}
+
+.carousel-fade .carousel-control {
+  z-index: 2;
+}
+/*
+  WHAT IS NEW IN 3.3: "Added transforms to improve carousel performance in modern browsers."
+  Need to override the 3.3 new styles for modern browsers & apply opacity
+*/
+@media all and (transform-3d), (-webkit-transform-3d) {
+    .carousel-fade .carousel-inner > .item.next,
+    .carousel-fade .carousel-inner > .item.active.right {
+      opacity: 0.1;
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0);
+    }
+    .carousel-fade .carousel-inner > .item.prev,
+    .carousel-fade .carousel-inner > .item.active.left {
+      opacity: 0.1;
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0);
+    }
+    .carousel-fade .carousel-inner > .item.next.left,
+    .carousel-fade .carousel-inner > .item.prev.right,
+    .carousel-fade .carousel-inner > .item.active {
+      opacity:1;
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0);
+    }
+}
+
+
 
 
 
@@ -196,7 +247,9 @@ b{
 	font-size:50px;
 	text-align:center;
 	padding-top:10px;
-	padding-bottom:385px;
+}
+.carousel-caption {
+	height:65%;
 }
 
 
@@ -218,7 +271,6 @@ hr {
 h3.about-us {
 	font-family: 'Poppins', sans-serif;
 	font-size:45px;
-	margin-top:10px;
 }
 .FIRST{
 	padding-top:50px;
@@ -249,7 +301,9 @@ p.about-us {
 }
 
 .hr-below-first {
-	margin-top:30px;
+	margin-top: 60px;
+	margin-bottom: 60px;
+	padding: 0px !important;
 }
 /*About Us Zone Ends Here -----------------------------------*/
 /*Entering Subteams Zone ------------------------------------*/
@@ -338,12 +392,76 @@ hr.sponsorshr {
 }
 /*Buttons Ends HERE -----------------------------------------*/
 /*ScrollSpy--------------------------------------------------*/
-#AboutUs {
-	padding-top:50px;
-}
+
 #Subteams {
-	padding-top:70px;
+	padding-top:10px;
 }
+
+
+/* Sponsors stuff starts here */
+	img.sponsor {
+		width: 100%;
+	}
+	
+	h2.sponsors-h2 {
+		text-align: center;
+		padding-top: 60px;
+		padding-bottom: 40px;
+		font-family: 'Poppins', sans-serif;
+		font-size: 48px;
+	}
+	/* Being flip Animation */
+	/* entire container, keeps perspective */
+	
+	.flip-container {
+		perspective: 1000;
+		margin: 20px;
+	}
+	/* flip the pane when hovered */
+	
+	.flip-container:hover .flipper,
+	.flip-container.hover .flipper {
+		transform: rotateY(180deg);
+	}
+	
+	.flip-container,
+	.front,
+	.back {
+		width: 280px;
+		height: 140px;
+	}
+	/* flip speed goes here */
+	
+	.flipper {
+		transition: 0.75s;
+		transform-style: preserve-3d;
+		position: relative;
+	}
+	/* hide back of pane during swap */
+	
+	.front,
+	.back {
+		backface-visibility: hidden;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+	/* front pane, placed above back */
+	
+	.front {
+		z-index: 2;
+		/* for firefox 31 */
+		transform: rotateY(0deg);
+	}
+	/* back, initially hidden pane */
+	
+	.back {
+		transform: rotateY(180deg);
+	}
+	/* End flip animation */
+/* Sponsor stuff ends here */
+
+
 /*Entering Footer CSS zone-----------------------------------*/
 .navbar-static-bottom {
 	margin-top:35px;
