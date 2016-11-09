@@ -1,32 +1,31 @@
-
 <html>
-	<head>
-		<link rel='stylesheet' href='fullcalendar/fullcalendar.css'/>
-		<script src='fullcalendar/lib/jquery.min.js'></script>
-		<script src='fullcalendar/lib/moment.min.js'></script>
-		<script src='fullcalendar/fullcalendar.js'></script>
-		<script type='text/javascript' src='fullcalendar/gcal.js' onerror="imgError()"></script>
-		<link href="https://fonts.googleapis.com/css?family=Orienta|Poppins" rel="stylesheet">
-		<link href="css/bootstrap.min.css" rel="stylesheet">
-		<link href="css/stylesheet.css" rel="stylesheet">
-			<script type='text/javascript'>
+    <head>
+        <link rel='stylesheet' href='fullcalendar/fullcalendar.css'/>
+        <script src='fullcalendar/lib/jquery.min.js'></script>
+        <script src='fullcalendar/lib/moment.min.js'></script>
+        <script src='fullcalendar/fullcalendar.js'></script>
+        <script type='text/javascript' src='fullcalendar/gcal.js' onerror="imgError()"></script>
+        <link href="https://fonts.googleapis.com/css?family=Orienta|Poppins" rel="stylesheet">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
 
-			$(document).ready(function() {
-    			$('#calendar').fullCalendar({
-        			googleCalendarApiKey: 'AIzaSyDIQZLuITK90tlTtdHN4cSkdLW9aRznnL4',
-        			events: {
-            			googleCalendarId: 'db25n7oev1at726gljle5d784c@group.calendar.google.com'
-        			}
-    			});
-    			
-    			$('#calendar').fullCalendar({
-					weekends: false // will hide Saturdays and Sundays
-				});
-			});
 
-		</script>
-	</head>
-	
+    <link href="css/stylesheet.css" rel="stylesheet">
+        <script type='text/javascript'>
+            $(document).ready(function() {
+                $('#calendar').fullCalendar({
+                    googleCalendarApiKey: 'AIzaSyDIQZLuITK90tlTtdHN4cSkdLW9aRznnL4',
+                    events: {
+                        googleCalendarId: 'db25n7oev1at726gljle5d784c@group.calendar.google.com'
+                    }
+                });
+                
+                $('#calendar').fullCalendar({
+                    weekends: false // will hide Saturdays and Sundays
+                });
+            });
+        </script>
+    </head>
+    
     <body>
   <div id="top-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container naver">
@@ -47,10 +46,10 @@
           <li class="links"><a class="links" href="index.html#AboutUs">About Us</a></li>
           <li class="links"><a class="links" href="index.html#Subteams">Subteams</a></li>
           <li class="links"><a class="links" href="index.html#Sponsors">Sponsors</a></li>
-          <li class="dropdown links">
+           <li class="dropdown links">
             <a ref="#" class="dropdown-toggle links" data-toggle="dropdown">More<b class="caret"></b></a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-text" href="#">Calendar</a></li>
+              <li><a class="dropdown-text" href="Calendar-page.html">Calendar</a></li>
               <li><a class="dropdown-text" href="Resources-page.html">Resources</a></li>
               <li><a class="dropdown-text" href="Art-page.html">Art</a></li>
               <li><a class="dropdown-text" href="ZeroRobotics-page.html">Zero</a></li>
@@ -62,6 +61,7 @@
       </div>
     </div>
   </div>
+
       
    <!-- Navbar ends here -->
 
@@ -75,19 +75,18 @@
     </body>
 
     <style>
-    	div.first-container {
-    		padding-top:150px;
-    	}
-    	h2.about-calendar {
-    		font-family:'Poppins',sans-serif;
-    		text-align:center;
-    		font-size:45px;
-    	}
-    	hr {
-    		margin-bottom:40px !important;
-    	}
+        div.first-container {
+            padding-top:150px;
+        }
+        h2.about-calendar {
+            font-family:'Poppins',sans-serif;
+            text-align:center;
+            font-size:45px;
+        }
+        hr {
+            margin-bottom:40px !important;
+        }
     </style>
-
 
 
 </html>
