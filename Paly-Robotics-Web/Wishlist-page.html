@@ -61,7 +61,7 @@
               <li><a class="dropdown-text" href="#">Summer Camp</a></li>
             </ul>
           </li>
-          <li class="links"><a class="links" href="ContactUs-page.html">Contact</a></li>
+          <li class="links"><a class="links" href="ContactUs.html">Contact</a></li>
         </ul>
       </div>
     </div>
@@ -69,31 +69,43 @@
 
   <div class="container first-container">
     <div class="col-md-12">
-      <h2 class="about-calendar">Calendar</h2>
+      <h2 class="about-calendar">Wishlist</h2>
       <hr>
-      <div id='calendar'></div>
+      <ul class="pagination">
+        <li><a href="#">All</a></li>
+        <li><a href="#">$0-$20</a></li>
+        <li><a href="#">$21-$50</a></li>
+        <li><a href="#">$51-100</a></li>
+        <li><a href="#">$101-$300</a></li>
+        <li><a href="#">$300+</a></li>
+      </ul>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th class="col-md-5">Item Name</th>
+            <th class="col-md-3">Online Vendor</th>
+            <th class="col-md-1">Quantity</th>
+            <th class="col-md-3">Total Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Cutters</td>
+            <td><a href="http://www.harborfreight.com/4-1-2-half-inch-diagonal-cutters-40695.html" target="_blank">Harbor Freight</a></td>
+            <td>3</td>
+            <td>$5.97</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 
-  <div class="navbar navbar-inverse navbar-static-bottom nav-bot" role="navigation">
-    <div class="container foot">
-      <div class="navbar-text pull-left">
-        <p class="footer">© Paly Robotics 2016</p>
-      </div>
-      <div class="navbar-text pull-right">
-        <a href="https://www.facebook.com/PalyRobotics/" target="_blank"><i class="fa fa-facebook-square fa-2x facebook"></i></a>
-        <a href="https://twitter.com/frc8?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank"><i class="fa fa-twitter fa-2x twitter twitter"></i></a>
-        <a href="https://www.youtube.com/channel/UCxDYmpiPO5we91MfFKfWzsQ" target="_blank"><i class="fa fa-youtube-play fa-2x youtube"></i></a>
-      </div>
-    </div>
-  </div>
-
-  
   </body>
 
     <style>
         div.first-container {
             padding-top:150px;
+            font-family:'Poppins',sans-serif;
         }
         h2.about-calendar {
             font-family:'Poppins',sans-serif;
