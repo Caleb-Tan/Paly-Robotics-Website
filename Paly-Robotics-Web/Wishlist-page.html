@@ -2,33 +2,16 @@
 
 
 	<head>
-		<link rel='stylesheet' href='fullcalendar/fullcalendar.css'/>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
-		<script src='fullcalendar/lib/jquery.min.js'></script>
-		<script src='fullcalendar/lib/moment.min.js'></script>
-		<script src='fullcalendar/fullcalendar.js'></script>
-		<script type='text/javascript' src='fullcalendar/gcal.js' onerror="imgError()"></script>
+    <script src="PapaParse/papaparse.min.js"></script>
 		<link href="https://fonts.googleapis.com/css?family=Orienta|Poppins" rel="stylesheet">
 		<link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/stylesheet.css" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
-		<script type='text/javascript'>
-            $(document).ready(function() {
-                $('#calendar').fullCalendar({
-                    googleCalendarApiKey: 'AIzaSyDIQZLuITK90tlTtdHN4cSkdLW9aRznnL4',
-                    events: {
-                        googleCalendarId: 'db25n7oev1at726gljle5d784c@group.calendar.google.com'
-                    }
-                });
-                
-                $('#calendar').fullCalendar({
-                    weekends: false // will hide Saturdays and Sundays
-                });
-            });
-        </script>
+
     </head>
     
   <body>
@@ -69,36 +52,35 @@
 
   <div class="container first-container">
     <div class="col-md-12">
-      <h2 class="about-calendar">Wishlist</h2>
-      <hr>
-      <ul class="pagination">
-        <li><a href="#">All</a></li>
-        <li><a href="#">$0-$20</a></li>
-        <li><a href="#">$21-$50</a></li>
-        <li><a href="#">$51-100</a></li>
-        <li><a href="#">$101-$300</a></li>
-        <li><a href="#">$300+</a></li>
-      </ul>
-      <table class="table table-bordered">
-        <thead>
-          <tr>
-            <th class="col-md-5">Item Name</th>
-            <th class="col-md-3">Online Vendor</th>
-            <th class="col-md-1">Quantity</th>
-            <th class="col-md-3">Total Price</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Cutters</td>
-            <td><a href="http://www.harborfreight.com/4-1-2-half-inch-diagonal-cutters-40695.html" target="_blank">Harbor Freight</a></td>
-            <td>3</td>
-            <td>$5.97</td>
-          </tr>
-        </tbody>
-      </table>
+      <h2>Wishlist</h2>
     </div>
   </div>
+
+  <div class="container">
+    <hr>
+    <p id="tobegin"> Select a price range:</p>
+    <ul class="pagination">
+      <li><a href="#" onclick="paginationClicked([1.00,1000000.0])">All</a></li>
+      <li><a href="#" onclick="paginationClicked([1.0,20.0])">$0-$20</a></li>
+      <li><a href="#" onclick="paginationClicked([20.0,50.0])">$20-$50</a></li>
+      <li><a href="#" onclick="paginationClicked([50.0,100.0])">$50-$100</a></li>
+      <li><a href="#" onclick="paginationClicked([100.0,300.0])">$100-$300</a></li>
+      <li><a href="#" onclick="paginationClicked([300.0,1000000.0])">$300+</a></li>
+    </ul>
+      
+    <table class="table table-bordered">
+      <thead>
+        <tr id="toshow">
+        </tr>
+      </thead>
+      <tbody id="csv-import">
+      </tbody>
+    </table>
+  </div>
+  <script>
+  
+  </script>
+  
 
   </body>
 
@@ -107,7 +89,7 @@
             padding-top:150px;
             font-family:'Poppins',sans-serif;
         }
-        h2.about-calendar {
+        h2{
             font-family:'Poppins',sans-serif;
             text-align:center;
             font-size:45px;
@@ -115,7 +97,148 @@
         hr {
             margin-bottom:40px !important;
         }
+        body{
+          font-family:'Poppins',sans-serif;
+        }
+        p{
+          font-size: 15px;
+        }
+        .tobegin{
+
+        }
+
     </style>
+
+        <script type="text/csv" id="unparsed">
+Cutters,http://www.harborfreight.com/4-1-2-half-inch-diagonal-cutters-40695.html,3,$5.97
+Center punch with round knurled handle,http://www.mcmaster.com/#3498a12/=13i02p6,2,$7.22
+Hacksaw blades,http://www.mcmaster.com/#6927A16,1,$8.65
+Punch,http://www.mcmaster.com/#3417A2,2,$8.76
+Socket wrench rack,https://www.amazon.com/03966L-Universal-Organizer-80-Piece-Multi-Drive/dp/B005ANSPW2/ref=sr_1_1?ie=UTF8&qid=1469862272&sr=8-1&keywords=socket+wrench+organizer,1,$15.12
+Gas Duster,https://www.amazon.com/Dust-Off-Compressed-Gas-Duster-Pack/dp/B00DZYEXPQ/ref=sr_1_3?ie=UTF8&qid=1474681074&sr=8-3&keywords=electronics+air+duster,1,$16.24
+T handle allen wrench set ,http://www.harborfreight.com/18-piece-t-handle-ball-point-and-hex-key-wrench-set-96645.html,1,$17.99
+Screw machine length #9 drill bits,http://www.mscdirect.com/product/details/89321897,10,$19.10
+9 Drill Bits,http://www.mcmaster.com/#30585A19,12,$19.56
+Rivet Gun,http://www.harborfreight.com/heavy-duty-17-1-2-half-inch-hand-riveter-with-collection-bottle-66422.html,1,$19.99
+Super glue,https://www.amazon.com/Loctite-Liquid-Professional-20-Gram-1365882/dp/B004Y960MU/ref=sr_1_1?ie=UTF8&qid=1470591639&sr=8-1&keywords=super+glue,4 pack,$20.47
+Epoxy,https://www.amazon.com/Bob-Smith-Industries-BSI-201H-Quik-Cure/dp/B0166FFFD4/ref=sr_1_1?ie=UTF8&qid=1470388064&sr=8-1&keywords=epoxy,3,$24.24
+Flashlights,http://www.homedepot.com/p/Ryobi-ONE-18-Volt-Area-Light-Tool-Only-P704/100006806,2,$25.94
+F Drill Bits,http://www.mcmaster.com/#30595A36,12,$27.12
+Screw machine length F drill bits,http://www.mscdirect.com/product/details/89322150,10,$32.00
+CNC Coolant,https://www.amazon.com/Cutting-Grinding-SC520-Semisynthetic-Concentrate/dp/B00R9LXVKY/ref=sr_1_1?ie=UTF8&qid=1474755842&sr=8-1&keywords=cnc+coolant,1,$34.16
+Trigger Clamp 12 inch,https://www.amazon.com/DEWALT-DWHT83158-Medium-Trigger-Clamp/dp/B006H94YCS/ref=sr_1_1?ie=UTF8&qid=1476677439&sr=8-1&keywords=trigger+clamp+12,2,$45.96
+Trigger Clamp 6 Inch,https://www.amazon.com/IRWIN-5462-Quick-grip-2-6-Inch-Clamps/dp/B00004YOBR/ref=sr_1_11?ie=UTF8&qid=1476678327&sr=8-11&keywords=trigger+clamp+6+inch,2,$48.02
+Digital caliper,https://www.amazon.com/VINCA-DCLA-0605-Electronic-Fractions-Conversion/dp/B017KUC6XQ/ref=lp_2476630011_1_1?s=industrial&ie=UTF8&qid=1469905628&sr=1-1,3,$49.23
+Lanterns,http://www.homedepot.com/p/Ultimate-Survival-Technologies-1000-Lumen-LED-Classic-Lantern-20-LNT0004-01/206390949,3,$50.31
+Gaffers tape,https://www.amazon.com/Professional-Premium-Grade-Gaffer-Power%C2%AE/dp/B00GZE3UJ8/ref=sr_1_1?s=industrial&ie=UTF8&qid=1470388663&sr=1-1&keywords=gaffers+tape,3,$50.64
+Vise grips,https://www.amazon.com/Tools-VISE-GRIP-Locking-Original-36/dp/B0015YJDNK/ref=sr_1_5?ie=UTF8&qid=1469763781&sr=8-5&keywords=irwin+tools+vise+grip,3,$53.79
+Clamping kit,https://www.amazon.com/Grizzly-G1076-Clamping-T-Slots-58-Piece/dp/B0000DD0D3/ref=sr_1_3?ie=UTF8&qid=1471125821&sr=8-3&keywords=clamping+kit+5%2F8%22,1,$59.73
+Letter drill bit drawer,https://www.amazon.com/Huot-Three-Drawer-Dispenser-Cabinet-Letter/dp/B0002FSCTE,1,$70.90
+Lathe parting tool,http://www.mcmaster.com/#3366A51,3,$79.11
+Lathe tool bits,http://www.mcmaster.com/#3244a648/=13ppnn8,10,$97.50
+Number and fractional drill bit drawer,http://www.ebay.com/itm/HUOT-DRILL-BIT-DISPENSER-ORGANIZER-CABINET-13000-13025-Fracational-Number-/121787607574,1,$113.85
+Lathe tool holders,http://www.mscdirect.com/product/details/78641081,1,$209.41
+Cutting Oil,http://www.mscdirect.com/browse/tnpla/00261958?src=pla&cid=PLA-Google-PLA+-+Test&CS_003=7867724&CS_010=00261958&mkwid=UmL0N9SP&gclid=CjwKEAjwnebABRCjpvr13dHL8DsSJABB-ILJ983WTio4N5Q3D6FgSkYIpMYRAmbeQwlb67GAsTKdbhoCxPnw_wcB,3 1 Gallon bottles,$266.19
+Knurling tool,http://www.mcmaster.com/#3332A53,1,$343.85
+Screw machine length drill bits,http://www.mscdirect.com/product/details/07574981,1,$368.15
+Drill bit sets,http://www.mscdirect.com/product/details/01186709,10,"$1,166.50"
+    </script>
+     <script>
+
+
+      $("#file").hide();
+      var data = $("#unparsed").html();
+      var results = Papa.parse(data);
+      var items = results.data;
+
+      function countProperties(obj) {
+        var count = 0;
+
+        for(var prop in obj) {
+          if(obj.hasOwnProperty(prop))
+            ++count;
+        }
+
+        return count;
+      }
+      var innerHTML = "";
+      for (var i  = 1; i < (countProperties(items) - 1); i++){
+        innerHTML += "<tr>"
+        innerHTML += "<td>" + items[i][0] + "</td>"
+        innerHTML += "<td><a target=\"_blank\" href=\"" + items[i][1] + "\">Click here</a></td>"
+        innerHTML += "<td>" + items[i][2] + "</td>"
+        innerHTML += "<td>" + items[i][3] + "</td></tr>"
+        
+      }
+      // document.getElementById("toshow").innerHTML = "<th class=\"col-md-5\">Item Name</th><th class=\"col-md-3\">Online Vendor</th><th class=\"col-md-1\">Quantity</th><th class=\"col-md-3\">Total Price</th>"
+      // document.getElementById("csv-import").innerHTML = innerHTML;
+      
+      function paginationClicked(priceRange){
+        document.getElementById("toshow").innerHTML = "<th class=\"col-md-5\">Item Name</th><th class=\"col-md-3\">Online Vendor</th><th class=\"col-md-1\">Quantity</th><th class=\"col-md-3\">Total Price</th>"
+        document.getElementById("tobegin").innerHTML = "<p>This list is composed of items we need for our lab. If you are willing to buy/donate an item, please talk to our current lab manager Shota.</p>";
+
+        var minPrice = priceRange[0];
+        var maxPrice = priceRange[1];
+        var minIndex = 0;
+        var i = 0;
+        if (minPrice != 0){
+          while (minIndex == 0){
+            i++
+            var currentPrice = parseFloat(items[i][3].substr(1));
+            if (priceRange[0] < currentPrice){
+              minIndex = i;
+            }
+          }
+        }else{
+          minIndex = 1;
+        }
+        console.log("MinIndex",minIndex);
+        console.log("Min-Price",items[minIndex][3])
+
+
+        var maxIndex = 0;
+        var i = 1;
+        while (maxIndex == 0 && i < (countProperties(items) - 1)){
+          
+          var currentPrice = parseFloat(items[i][3].substr(1));
+          if (priceRange[1] < currentPrice){
+            maxIndex = i - 1;
+          }
+          i++
+
+        }
+        console.log(maxIndex);
+        if (maxIndex == 0){
+          console.log("here");
+          maxIndex = countProperties(items) - 2;
+        }
+        console.log("Max Index",maxIndex);
+        console.log("Max Price",items[maxIndex][3]);
+        console.log("Break");
+
+        var innerHTML = "";
+        for (var i  = minIndex; i < (maxIndex + 1); i++){
+        
+          innerHTML += "<tr>"
+          innerHTML += "<td>" + items[i][0] + "</td>"
+          innerHTML += "<td><a target=\"_blank\" href=\"" + items[i][1] + "\">Click here</a></td>"
+          innerHTML += "<td>" + items[i][2] + "</td>"
+          innerHTML += "<td>" + items[i][3] + "</td></tr>"
+        
+        }
+        document.getElementById("csv-import").innerHTML = innerHTML;
+
+        
+      }
+      
+
+      
+
+    </script>
+
+    <script>
+
+    </script>
 
 
 
