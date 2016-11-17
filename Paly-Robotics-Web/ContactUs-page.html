@@ -178,7 +178,7 @@ for(var currentRow = 0; currentRow < rows; currentRow++){
 	innerHTML += "<div class=\"row\">";
 	if (currentRow === 0){
 		
-		for (var currentElement = 1; currentElement < (numberOfItems + 1); currentElement++){
+		for (var currentElement = 1; currentElement < (numberOfItems); currentElement++){
 			innerHTML += "<div class=\"col-md-3\"><img src=\"images/placeholder.png\" class=\"img-circle center-block\" /><div class=\"name-and-role\">";
 			innerHTML += "<p class=\"name\">" + data[currentElement][0] + "</p>";
 			innerHTML += "<p class=\"role\">" + data[currentElement][1] + "</p>";
@@ -198,7 +198,7 @@ for(var currentRow = 0; currentRow < rows; currentRow++){
 				
 			}
 			console.log("Start -----")
-			console.log("currentElement",currentElement)
+			console.log("currentElement",currentRow)
 			console.log("maxval",((currentRow + 1) * numberOfItems))
 			console.log("comparision",size >= ((currentRow + 1) * numberOfItems))
 			console.log("Stop -----")
