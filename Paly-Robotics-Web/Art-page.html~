@@ -146,7 +146,12 @@
 
     <div class="row">
 
+<<<<<<< HEAD
       <div class="col-md-4">
+=======
+
+      <div class="col-md-4 extra-padding">
+>>>>>>> 6ed7ff782a4af5aa3b1516e2c374fa3e700a13ba
         <img class="img-responsive" src="http://palyrobotics.com/assets/img/art/graphic/NameTag.png">
         <h4 class="web">Name Tags</h4>
         <p class="paragraph-circle">Examples of name tags that people made to start familiarizing themselves with digital tools.</p>
