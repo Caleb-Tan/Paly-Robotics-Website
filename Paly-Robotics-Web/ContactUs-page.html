@@ -188,7 +188,7 @@ for(var currentRow = 0; currentRow < rows; currentRow++){
 		innerHTML += "</div>";
 	}else{
 		
-		for (var currentElement = (currentRow * numberOfItems); currentElement < ((currentRow + 1) * numberOfItems); currentElement++){
+		for (var currentElement = (currentRow * numberOfItems); currentElement < (((currentRow + 1) * numberOfItems) + 1); currentElement++){
 			
 			if (currentElement !== numberOfItems){
 				if (size >= currentElement){
