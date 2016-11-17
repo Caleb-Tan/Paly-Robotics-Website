@@ -58,14 +58,14 @@
 
   <div class="container">
     <hr>
-    <p id="tobegin"> Select a price range:</p>
-    <ul class="pagination">
-      <li><a href="#" onclick="paginationClicked([1.00,1000000.0])">All</a></li>
-      <li><a href="#" onclick="paginationClicked([1.0,20.0])">$0-$20</a></li>
-      <li><a href="#" onclick="paginationClicked([20.0,50.0])">$20-$50</a></li>
-      <li><a href="#" onclick="paginationClicked([50.0,100.0])">$50-$100</a></li>
-      <li><a href="#" onclick="paginationClicked([100.0,300.0])">$100-$300</a></li>
-      <li><a href="#" onclick="paginationClicked([300.0,1000000.0])">$300+</a></li>
+    <p id="tobegin">Below is the list if items we need for our lab. If you are willing to buy/donate any of these items, please talk to our lab manager Shota.</p>
+    <ul class="pagination" id="pRangeButtons">
+      <li id="1,1000000"><a href="#" onclick="paginationClicked([1.00,1000000.0])">All</a></li>
+      <li id="1,20"><a href="#" onclick="paginationClicked([1.0,20.0])">$0-$20</a></li>
+      <li id="20,50"><a href="#" onclick="paginationClicked([20.0,50.0])">$20-$50</a></li>
+      <li id="50,100"><a href="#" onclick="paginationClicked([50.0,100.0])">$50-$100</a></li>
+      <li id="100,300"><a href="#" onclick="paginationClicked([100.0,300.0])">$100-$300</a></li>
+      <li id="300,1000000"><a href="#" onclick="paginationClicked([300.0,1000000.0])">$300+</a></li>
     </ul>
       
     <table class="table table-bordered">
@@ -145,12 +145,17 @@ Drill bit sets,http://www.mscdirect.com/product/details/01186709,10,"$1,166.50"
     </script>
      <script>
 
-
+      //Getting the .csv from above.
       $("#file").hide();
       var data = $("#unparsed").html();
+
+      //Using PapaParse's API to parse the results received.
       var results = Papa.parse(data);
+
+      //PapaParse's APi returns 3 things, we only want to use the data part.
       var items = results.data;
 
+      //Custom countProperties of objects function created, used a lot in for loops.
       function countProperties(obj) {
         var count = 0;
 
@@ -161,30 +166,63 @@ Drill bit sets,http://www.mscdirect.com/product/details/01186709,10,"$1,166.50"
 
         return count;
       }
-      var innerHTML = "";
+
+      //Initializing current selection to "All", a variable that tracks the current range of the pagination. Necessary to change the the .active class of each button.
+      var currentSelection = "";
+      currentSelection = "1,1000000";
+
+      //Adding the .active class to the "All" button.
+      document.getElementById(currentSelection).className += "active";
+
+      //Initializing the title of the table.
+      document.getElementById("toshow").innerHTML = "<th class=\"col-md-5\">Item Name</th><th class=\"col-md-3\">Online Vendor</th><th class=\"col-md-1\">Quantity</th><th class=\"col-md-3\">Total Price</th>";
+
+      //Initializing the innerHTML of the body of the table.
+      var bodyInnerHTML = "";
+
+      //Looping through items and adding all of its properties as data for the table.
+      //The first element of the PapaParse data is one, so this loop skips over that.
       for (var i  = 1; i < (countProperties(items) - 1); i++){
-        innerHTML += "<tr>"
-        innerHTML += "<td>" + items[i][0] + "</td>"
-        innerHTML += "<td><a target=\"_blank\" href=\"" + items[i][1] + "\">Click here</a></td>"
-        innerHTML += "<td>" + items[i][2] + "</td>"
-        innerHTML += "<td>" + items[i][3] + "</td></tr>"
+        bodyInnerHTML += "<tr>"
+        bodyInnerHTML += "<td>" + items[i][0] + "</td>"
+        bodyInnerHTML += "<td><a target=\"_blank\" href=\"" + items[i][1] + "\">Click here</a></td>"
+        bodyInnerHTML += "<td>" + items[i][2] + "</td>"
+        bodyInnerHTML += "<td>" + items[i][3] + "</td></tr>"
         
       }
-      // document.getElementById("toshow").innerHTML = "<th class=\"col-md-5\">Item Name</th><th class=\"col-md-3\">Online Vendor</th><th class=\"col-md-1\">Quantity</th><th class=\"col-md-3\">Total Price</th>"
-      // document.getElementById("csv-import").innerHTML = innerHTML;
-      
+      //Updating the body of the table
+      document.getElementById("csv-import").innerHTML = bodyInnerHTML;
+  
+  	  //Runs when a pagination button is clicked.  
       function paginationClicked(priceRange){
-        document.getElementById("toshow").innerHTML = "<th class=\"col-md-5\">Item Name</th><th class=\"col-md-3\">Online Vendor</th><th class=\"col-md-1\">Quantity</th><th class=\"col-md-3\">Total Price</th>"
-        document.getElementById("tobegin").innerHTML = "<p>This list is composed of items we need for our lab. If you are willing to buy/donate an item, please talk to our current lab manager Shota.</p>";
 
+      	//Finds the pagination that was clicked earlier and deletes the "active" class from it
+      	document.getElementById(currentSelection).className = document.getElementById(currentSelection).className.replace( /(?:^|\s)active(?!\S)/g , '' )
+      	
         var minPrice = priceRange[0];
         var maxPrice = priceRange[1];
+
+        //Sets currentSelection to the button currently selected and updates the pagination
+        currentSelection = minPrice.toString() + "," + maxPrice.toString();
+        document.getElementById(currentSelection).className += "active";
+
+        //The table is ordered price wise, from lowest to higest. minIndex finds the lowest index of the price range in the table.
         var minIndex = 0;
+
+        //i for for loop
         var i = 0;
+
+        //If minPrice is already 0, we don't want to waste time looping through. Otherwise, we continue...
         if (minPrice != 0){
+          //While is more efficent here because minIndex will most likely be before the end of the loop.
           while (minIndex == 0){
+          	//Adding 1 to i first because of the whole skippy thing
             i++
+
+            //currentPrice gets the value via the i variable, deletes the first item(which is "$"") and then parses the string into a float.
             var currentPrice = parseFloat(items[i][3].substr(1));
+
+            //Once currentPrice is bigger than the priceRange, we set the i equal to the minIndex. Remember skippy thing.
             if (priceRange[0] < currentPrice){
               minIndex = i;
             }
@@ -192,10 +230,8 @@ Drill bit sets,http://www.mscdirect.com/product/details/01186709,10,"$1,166.50"
         }else{
           minIndex = 1;
         }
-        console.log("MinIndex",minIndex);
-        console.log("Min-Price",items[minIndex][3])
 
-
+        //Same as above
         var maxIndex = 0;
         var i = 1;
         while (maxIndex == 0 && i < (countProperties(items) - 1)){
@@ -207,15 +243,14 @@ Drill bit sets,http://www.mscdirect.com/product/details/01186709,10,"$1,166.50"
           i++
 
         }
-        console.log(maxIndex);
+
+        //If they could not find a max index, it means that it is a miilion or higher
         if (maxIndex == 0){
           console.log("here");
           maxIndex = countProperties(items) - 2;
         }
-        console.log("Max Index",maxIndex);
-        console.log("Max Price",items[maxIndex][3]);
-        console.log("Break");
 
+        //Updating the table...
         var innerHTML = "";
         for (var i  = minIndex; i < (maxIndex + 1); i++){
         
