@@ -74,36 +74,7 @@
 
 	<!-- Contact stuff begins here -->
 	<div class="container">
-		<div class="row">
-			<div class="col-md-3">
-				<img src="images/placeholder.png" class="img-circle center-block" />
-				<div class="name-and-role">
-					<p class="name">Chris Kuszmaul</p>
-					<p class="role">Head Coach</p>
-				</div>
-			</div>
-			<div class="col-md-3">
-				<img src="images/placeholder.png" class="img-circle center-block" />
-				<div class="name-and-role">
-					<p class="name">Chris Kuszmaul</p>
-					<p class="role">Head Coach</p>
-				</div>
-			</div>
-			<div class="col-md-3">
-				<img src="images/placeholder.png" class="img-circle center-block" />
-				<div class="name-and-role">
-					<p class="name">Chris Kuszmaul</p>
-					<p class="role">Head Coach</p>
-				</div>
-			</div>
-			<div class="col-md-3">
-				<img src="images/placeholder.png" class="img-circle center-block" />
-				<div class="name-and-role">
-					<p class="name">Chris Kuszmaul</p>
-					<p class="role">Head Coach</p>
-				</div>
-			</div>
-		</div>
+		<div id="js-add"></div>
 	</div>
 	<!-- Body ends here -->
 
@@ -168,7 +139,25 @@
 	}
 </style>
 <script type="text/javascript">
-	
+	var names = ["Kenny","Simrun","Johnny","Devin"];
+	var roles = ["Team Captain","Assistant Captain","Project Manager","Build Captain"];
+	var emails = ["Kenny Email","Simrun Email","Johnny Email","Devin Email"];
+	var descriptions = ["Kenny Description","Simrun Description","Johnny Description","Devin Description"];
+	if ((names.length == roles.length) && (emails.length == descriptions.length) && (names.length == emails.length)){
+		var innerHTML = "<div class=\"row\">";
+		for (var i = 0; i < names.length; i++){
+			innerHTML += "<div class=\"col-md-3\"><img src=\"images/placeholder.png\" class=\"img-circle center-block\" /><div class=\"name-and-role\">";
+			innerHTML += "<p class=\"name\">" + names[i] + "</p>";
+			innerHTML += "<p class=\"role\">" + roles[i] + "</p>";
+			innerHTML += "</div></div>"
+
+		}
+		innerHTML += "</div>";
+		document.getElementById("js-add").innerHTML = innerHTML;
+	}else{
+		alert("There is an error. Please try again");
+	}
+
 </script>
 
 </html>
