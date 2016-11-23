@@ -60,7 +60,7 @@
     <hr>
     <p id="tobegin">Below is the list if items we need for our lab. If you are willing to buy/donate any of these items, please talk to our lab manager Shota.</p>
     <ul class="pagination" id="pRangeButtons">
-      <li id="1,1000000"><a href="#" onclick="paginationClicked([1.00,1000000.0])">All</a></li>
+      <li id="1,1000000" class="active"><a href="#" onclick="paginationClicked([1.00,1000000.0])">All</a></li>
       <li id="1,20"><a href="#" onclick="paginationClicked([1.0,20.0])">$0-$20</a></li>
       <li id="20,50"><a href="#" onclick="paginationClicked([20.0,50.0])">$20-$50</a></li>
       <li id="50,100"><a href="#" onclick="paginationClicked([50.0,100.0])">$50-$100</a></li>
@@ -77,14 +77,18 @@
       </tbody>
     </table>
   </div>
-      <div id="authorize-div" style="display: none">
-      <span>Authorize access to Google Sheets API</span>
+
+  <div style="display: none">
+    <div id="authorize-div" style="display: none">
+  	<span>Authorize access to Google Sheets API</span>
       <!--Button for the user to click to initiate auth sequence -->
       <button id="authorize-button" onclick="handleAuthClick(event)">
         Authorize
       </button>
     </div>
-    <pre id="output"></pre>
+<!--   	<pre id="output"></pre> -->
+  </div>
+
   
 
   </body>
@@ -108,175 +112,13 @@
         p{
           font-size: 15px;
         }
-        .tobegin{
-
-        }
+        
 
     </style>
 
-        <script type="text/csv" id="unparsed">
-Cutters,http://www.harborfreight.com/4-1-2-half-inch-diagonal-cutters-40695.html,3,$5.97
-Center punch with round knurled handle,http://www.mcmaster.com/#3498a12/=13i02p6,2,$7.22
-Hacksaw blades,http://www.mcmaster.com/#6927A16,1,$8.65
-Punch,http://www.mcmaster.com/#3417A2,2,$8.76
-Socket wrench rack,https://www.amazon.com/03966L-Universal-Organizer-80-Piece-Multi-Drive/dp/B005ANSPW2/ref=sr_1_1?ie=UTF8&qid=1469862272&sr=8-1&keywords=socket+wrench+organizer,1,$15.12
-Gas Duster,https://www.amazon.com/Dust-Off-Compressed-Gas-Duster-Pack/dp/B00DZYEXPQ/ref=sr_1_3?ie=UTF8&qid=1474681074&sr=8-3&keywords=electronics+air+duster,1,$16.24
-T handle allen wrench set ,http://www.harborfreight.com/18-piece-t-handle-ball-point-and-hex-key-wrench-set-96645.html,1,$17.99
-Screw machine length #9 drill bits,http://www.mscdirect.com/product/details/89321897,10,$19.10
-9 Drill Bits,http://www.mcmaster.com/#30585A19,12,$19.56
-Rivet Gun,http://www.harborfreight.com/heavy-duty-17-1-2-half-inch-hand-riveter-with-collection-bottle-66422.html,1,$19.99
-Super glue,https://www.amazon.com/Loctite-Liquid-Professional-20-Gram-1365882/dp/B004Y960MU/ref=sr_1_1?ie=UTF8&qid=1470591639&sr=8-1&keywords=super+glue,4 pack,$20.47
-Epoxy,https://www.amazon.com/Bob-Smith-Industries-BSI-201H-Quik-Cure/dp/B0166FFFD4/ref=sr_1_1?ie=UTF8&qid=1470388064&sr=8-1&keywords=epoxy,3,$24.24
-Flashlights,http://www.homedepot.com/p/Ryobi-ONE-18-Volt-Area-Light-Tool-Only-P704/100006806,2,$25.94
-F Drill Bits,http://www.mcmaster.com/#30595A36,12,$27.12
-Screw machine length F drill bits,http://www.mscdirect.com/product/details/89322150,10,$32.00
-CNC Coolant,https://www.amazon.com/Cutting-Grinding-SC520-Semisynthetic-Concentrate/dp/B00R9LXVKY/ref=sr_1_1?ie=UTF8&qid=1474755842&sr=8-1&keywords=cnc+coolant,1,$34.16
-Trigger Clamp 12 inch,https://www.amazon.com/DEWALT-DWHT83158-Medium-Trigger-Clamp/dp/B006H94YCS/ref=sr_1_1?ie=UTF8&qid=1476677439&sr=8-1&keywords=trigger+clamp+12,2,$45.96
-Trigger Clamp 6 Inch,https://www.amazon.com/IRWIN-5462-Quick-grip-2-6-Inch-Clamps/dp/B00004YOBR/ref=sr_1_11?ie=UTF8&qid=1476678327&sr=8-11&keywords=trigger+clamp+6+inch,2,$48.02
-Digital caliper,https://www.amazon.com/VINCA-DCLA-0605-Electronic-Fractions-Conversion/dp/B017KUC6XQ/ref=lp_2476630011_1_1?s=industrial&ie=UTF8&qid=1469905628&sr=1-1,3,$49.23
-Lanterns,http://www.homedepot.com/p/Ultimate-Survival-Technologies-1000-Lumen-LED-Classic-Lantern-20-LNT0004-01/206390949,3,$50.31
-Gaffers tape,https://www.amazon.com/Professional-Premium-Grade-Gaffer-Power%C2%AE/dp/B00GZE3UJ8/ref=sr_1_1?s=industrial&ie=UTF8&qid=1470388663&sr=1-1&keywords=gaffers+tape,3,$50.64
-Vise grips,https://www.amazon.com/Tools-VISE-GRIP-Locking-Original-36/dp/B0015YJDNK/ref=sr_1_5?ie=UTF8&qid=1469763781&sr=8-5&keywords=irwin+tools+vise+grip,3,$53.79
-Clamping kit,https://www.amazon.com/Grizzly-G1076-Clamping-T-Slots-58-Piece/dp/B0000DD0D3/ref=sr_1_3?ie=UTF8&qid=1471125821&sr=8-3&keywords=clamping+kit+5%2F8%22,1,$59.73
-Letter drill bit drawer,https://www.amazon.com/Huot-Three-Drawer-Dispenser-Cabinet-Letter/dp/B0002FSCTE,1,$70.90
-Lathe parting tool,http://www.mcmaster.com/#3366A51,3,$79.11
-Lathe tool bits,http://www.mcmaster.com/#3244a648/=13ppnn8,10,$97.50
-Number and fractional drill bit drawer,http://www.ebay.com/itm/HUOT-DRILL-BIT-DISPENSER-ORGANIZER-CABINET-13000-13025-Fracational-Number-/121787607574,1,$113.85
-Lathe tool holders,http://www.mscdirect.com/product/details/78641081,1,$209.41
-Cutting Oil,http://www.mscdirect.com/browse/tnpla/00261958?src=pla&cid=PLA-Google-PLA+-+Test&CS_003=7867724&CS_010=00261958&mkwid=UmL0N9SP&gclid=CjwKEAjwnebABRCjpvr13dHL8DsSJABB-ILJ983WTio4N5Q3D6FgSkYIpMYRAmbeQwlb67GAsTKdbhoCxPnw_wcB,3 1 Gallon bottles,$266.19
-Knurling tool,http://www.mcmaster.com/#3332A53,1,$343.85
-Screw machine length drill bits,http://www.mscdirect.com/product/details/07574981,1,$368.15
-Drill bit sets,http://www.mscdirect.com/product/details/01186709,10,"$1,166.50"
-    </script>
-     <script>
-
-      //Getting the .csv from above.
-      $("#file").hide();
-      var data = $("#unparsed").html();
-
-      //Using PapaParse's API to parse the results received.
-      var results = Papa.parse(data);
-
-      //PapaParse's APi returns 3 things, we only want to use the data part.
-      var items = results.data;
-
-      //Custom countProperties of objects function created, used a lot in for loops.
-      function countProperties(obj) {
-        var count = 0;
-
-        for(var prop in obj) {
-          if(obj.hasOwnProperty(prop))
-            ++count;
-        }
-
-        return count;
-      }
-
-      //Initializing current selection to "All", a variable that tracks the current range of the pagination. Necessary to change the the .active class of each button.
-      var currentSelection = "";
-      currentSelection = "1,1000000";
-
-      //Adding the .active class to the "All" button.
-      document.getElementById(currentSelection).className += "active";
-
-      //Initializing the title of the table.
-      document.getElementById("toshow").innerHTML = "<th class=\"col-md-5\">Item Name</th><th class=\"col-md-3\">Online Vendor</th><th class=\"col-md-1\">Quantity</th><th class=\"col-md-3\">Total Price</th>";
-
-      //Initializing the innerHTML of the body of the table.
-      var bodyInnerHTML = "";
-
-      //Looping through items and adding all of its properties as data for the table.
-      //The first element of the PapaParse data is one, so this loop skips over that.
-      for (var i  = 1; i < (countProperties(items) - 1); i++){
-        bodyInnerHTML += "<tr>"
-        bodyInnerHTML += "<td>" + items[i][0] + "</td>"
-        bodyInnerHTML += "<td><a target=\"_blank\" href=\"" + items[i][1] + "\">Click here</a></td>"
-        bodyInnerHTML += "<td>" + items[i][2] + "</td>"
-        bodyInnerHTML += "<td>" + items[i][3] + "</td></tr>"
-        
-      }
-      //Updating the body of the table
-      document.getElementById("csv-import").innerHTML = bodyInnerHTML;
-  
-  	  //Runs when a pagination button is clicked.  
-      function paginationClicked(priceRange){
-
-      	//Finds the pagination that was clicked earlier and deletes the "active" class from it
-      	document.getElementById(currentSelection).className = document.getElementById(currentSelection).className.replace( /(?:^|\s)active(?!\S)/g , '' )
-      	
-        var minPrice = priceRange[0];
-        var maxPrice = priceRange[1];
-
-        //Sets currentSelection to the button currently selected and updates the pagination
-        currentSelection = minPrice.toString() + "," + maxPrice.toString();
-        document.getElementById(currentSelection).className += "active";
-
-        //The table is ordered price wise, from lowest to higest. minIndex finds the lowest index of the price range in the table.
-        var minIndex = 0;
-
-        //i for for loop
-        var i = 0;
-
-        //If minPrice is already 0, we don't want to waste time looping through. Otherwise, we continue...
-        if (minPrice != 0){
-          //While is more efficent here because minIndex will most likely be before the end of the loop.
-          while (minIndex == 0){
-          	//Adding 1 to i first because of the whole skippy thing
-            i++
-
-            //currentPrice gets the value via the i variable, deletes the first item(which is "$"") and then parses the string into a float.
-            var currentPrice = parseFloat(items[i][3].substr(1));
-
-            //Once currentPrice is bigger than the priceRange, we set the i equal to the minIndex. Remember skippy thing.
-            if (priceRange[0] < currentPrice){
-              minIndex = i;
-            }
-          }
-        }else{
-          minIndex = 1;
-        }
-
-        //Same as above
-        var maxIndex = 0;
-        var i = 1;
-        while (maxIndex == 0 && i < (countProperties(items) - 1)){
-          
-          var currentPrice = parseFloat(items[i][3].substr(1));
-          if (priceRange[1] < currentPrice){
-            maxIndex = i - 1;
-          }
-          i++
-
-        }
-
-        //If they could not find a max index, it means that it is a miilion or higher
-        if (maxIndex == 0){
-          console.log("here");
-          maxIndex = countProperties(items) - 2;
-        }
-
-        //Updating the table...
-        var innerHTML = "";
-        for (var i  = minIndex; i < (maxIndex + 1); i++){
-        
-          innerHTML += "<tr>"
-          innerHTML += "<td>" + items[i][0] + "</td>"
-          innerHTML += "<td><a target=\"_blank\" href=\"" + items[i][1] + "\">Click here</a></td>"
-          innerHTML += "<td>" + items[i][2] + "</td>"
-          innerHTML += "<td>" + items[i][3] + "</td></tr>"
-        
-        }
-        document.getElementById("csv-import").innerHTML = innerHTML;
-
-        
-      }
-      
-
-      
-
-    </script>
-
     <script>
+
+    	var currentSelection = "1,1000000";
       var items = [];
       // Your Client ID can be retrieved from your project in the Google
       // Developer Console, https://console.developers.google.com
@@ -342,20 +184,10 @@ Drill bit sets,http://www.mscdirect.com/product/details/01186709,10,"$1,166.50"
       function listMajors() {
         gapi.client.sheets.spreadsheets.values.get({
           spreadsheetId: '1vWUMlrsi68jPKpUP1JCNLtbMooPm17zXeZaMf9Dw1SY',
-          range: 'A:G',
+          range: 'A2:E',
         }).then(function(response) {
-          console.log(response.result.values);
-          
-          // var range = response.result;
-          // if (range.values.length > 0) {
-          //   for (i = 0; i < range.values.length; i++) {
-          //     var row = range.values[i];
-          //     // Print columns A and E, which correspond to indices 0 and 4.
-          //     appendPre(row[0] + ', ' + row[1]);
-          //   }
-          // } else {
-          //   appendPre('No data found.');
-          // }
+          items = response.result.values;
+          sortValues();
         }, function(response) {
           appendPre('Error: ' + response.result.error.message);
         });
@@ -373,6 +205,119 @@ Drill bit sets,http://www.mscdirect.com/product/details/01186709,10,"$1,166.50"
         pre.appendChild(textContent);
       }
 
+      function sortValues(){
+      	document.getElementById("toshow").innerHTML = "<th class=\"col-md-5\">Item Name</th><th class=\"col-md-3\">Online Vendor</th><th class=\"col-md-1\">Quantity</th><th class=\"col-md-3\">Total Price</th>";
+      	items = items.sort(function(a, b){
+      		var firstPriceString = a[4];
+			firstPriceString = firstPriceString.substr(1);
+			firstPriceString = firstPriceString.replace(/,/g , "");
+			var firstPrice = parseFloat(firstPriceString);
+
+			var secondPriceString = b[4];
+			secondPriceString = secondPriceString.substr(1);
+			secondPriceString = secondPriceString.replace(/,/g , "");
+			var secondPrice = parseFloat(secondPriceString);
+
+
+
+      		return firstPrice-secondPrice
+      	})
+      	console.log("sortvalues",items);
+      	createTable();
+      }
+      function createTable(){
+      	var innerHTML = "";
+      	for (var i = 0; i < items.length; i++){
+      		innerHTML += "<tr>"
+          	innerHTML += "<td>" + items[i][0] + "</td>"
+          	innerHTML += "<td><a target=\"_blank\" href=\"" + items[i][1] + "\">" + items[i][2] + "</a></td>"
+          	innerHTML += "<td>" + items[i][3] + "</td>"
+          	innerHTML += "<td>" + items[i][4] + "</td></tr>"
+      	}
+      	document.getElementById("csv-import").innerHTML = innerHTML;
+
+      }
+
+        	  //Runs when a pagination button is clicked.  
+      function paginationClicked(priceRange){
+      	console.log("pressed");
+      	//Finds the pagination that was clicked earlier and deletes the "active" class from it
+      	document.getElementById(currentSelection).className = document.getElementById(currentSelection).className.replace( /(?:^|\s)active(?!\S)/g , '' )
+      	
+        var minPrice = priceRange[0];
+        var maxPrice = priceRange[1];
+
+        //Sets currentSelection to the button currently selected and updates the pagination
+        currentSelection = minPrice.toString() + "," + maxPrice.toString();
+        document.getElementById(currentSelection).className += "active";
+
+        //The table is ordered price wise, from lowest to higest. minIndex finds the lowest index of the price range in the table.
+        var minIndex = 0;
+
+        //i for while loop
+        var i = 0;
+
+        //If minPrice is already 0, we don't want to waste time looping through. Otherwise, we continue...
+        if (minPrice != 0){
+          //While is more efficent here because minIndex will most likely be before the end of the loop.
+          while (minIndex == 0){
+
+          	//Converting the currentPrice
+            var currentPriceString = items[i][4];
+			currentPriceString = currentPriceString.substr(1);
+			currentPriceString = currentPriceString.replace(/,/g , "");
+			var currentPrice = parseFloat(currentPriceString);
+
+         
+            if (priceRange[0] < currentPrice){
+              minIndex = i;
+            }
+
+            i++
+          }
+        }else{
+          minIndex = 0;
+        }
+        if (maxPrice == 1000000.0){
+          maxIndex = items.length;
+
+        }else{
+       		//Same as above
+        	var maxIndex = 0;
+        	var i = 0;
+
+        	while (maxIndex == 0 && i < items.length){
+          
+            	//Converting the currentPrice
+            	var currentPriceString = items[i][4];
+				currentPriceString = currentPriceString.substr(1);
+				currentPriceString = currentPriceString.replace(/,/g , "");
+				var currentPrice = parseFloat(currentPriceString);
+
+          		if (priceRange[1] < currentPrice){
+            		maxIndex = i;
+          		}
+          		i++
+
+        	}
+        }
+
+        //If they could not find a max index, it means that it is a miilion or higher, so we set it to the highest index
+
+
+        var innerHTML = "";
+      	for (var i = minIndex; i < maxIndex; i++){
+      		innerHTML += "<tr>"
+          	innerHTML += "<td>" + items[i][0] + "</td>"
+          	innerHTML += "<td><a target=\"_blank\" href=\"" + items[i][1] + "\">" + items[i][2] + "</a></td>"
+          	innerHTML += "<td>" + items[i][3] + "</td>"
+          	innerHTML += "<td>" + items[i][4] + "</td></tr>"
+      	}
+      	document.getElementById("csv-import").innerHTML = innerHTML;
+
+
+        
+      }
     </script>
     <script src="https://apis.google.com/js/client.js?onload=checkAuth"></script>
 
