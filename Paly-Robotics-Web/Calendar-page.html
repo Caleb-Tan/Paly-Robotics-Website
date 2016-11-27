@@ -17,16 +17,21 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
     <script type='text/javascript'>
             $(document).ready(function() {
-                $('#calendar').fullCalendar({
-                    googleCalendarApiKey: 'AIzaSyDIQZLuITK90tlTtdHN4cSkdLW9aRznnL4',
-                    events: {
-                        googleCalendarId: 'db25n7oev1at726gljle5d784c@group.calendar.google.com'
-                    }
-                });
-                
-                $('#calendar').fullCalendar({
-                    weekends: false // will hide Saturdays and Sundays
-                });
+                 $(document).ready(function () {
+    $('#calendar').fullCalendar({
+        googleCalendarApiKey : 'AIzaSyDIQZLuITK90tlTtdHN4cSkdLW9aRznnL4',
+        events : {
+            googleCalendarId : 'db25n7oev1at726gljle5d784c@group.calendar.google.com'
+        }
+    });
+    $(window).resize(function () {
+        if ((($(window).width() / $(window).height()) < 0.95)) {
+            $('#calendar').fullCalendar('changeView', "agendaWeek") //Change this accordingly
+        } else {
+            $('#calendar').fullCalendar('changeView', "month") //Change this accordingly
+        }
+    });
+ });
             });
         </script>
     </head>
@@ -99,6 +104,9 @@
             font-family:'Poppins',sans-serif;
             text-align:center;
             font-size:45px;
+        }
+        .calendar{
+        	height: 100%;
         }
         hr {
             margin-bottom:40px !important;

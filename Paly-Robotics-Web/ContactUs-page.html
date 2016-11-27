@@ -64,7 +64,7 @@
 	<!-- Navbar ends here -->
 
 	<!-- Body begins here -->
-	<div class="container">
+	<div class="container extra-padding-bottom">
 		<h2 class="contact-us-header">
 			Contact Us
 		</h2>
@@ -115,6 +115,9 @@
 		width: 200px !important;
 		height: 200px !important;
 	}
+	.extra-padding-bottom{
+		padding-bottom: 20px;
+	}
 	
 	h2.contact-us-header {
 		text-align: center;
@@ -133,36 +136,50 @@
 	p.role{
 		text-align: center;	
 		font-size: 15px;
-		display: inline;
 	}
 	.name-and-role{
 		padding: 20px;
 	}
-	.glyphicon{
-		display: inline !important;
+	.i{
+		display: inline;	
 	}
+/*	.glyphicon{
+		display: inline !important;
+	}*/
 </style>
 <script type="text/javascript">
 var data = {
-  0:["Kenny Cheung","Team Captain","kcheung [at] palyrobotics [dot] com"],
+  0:["Chris Kuszmaul","Head Coach","ckuszmaul@palyrobotics.com"],
+
+  1:["Kenny Cheung","Team Captain","kcheung@palyrobotics.com"],
   
-  1:["Simran Pujji","Assistant Captain","spujji [at] palyrobotics [dot] com"],
+  2:["Simran Pujji","Assistant Captain","spujji@palyrobotics.com"],
   
-  2:["Jonathan Zwiebel","Project Manager","jzwiebel [at] palyrobotics [dot] com"],
+  3:["Jonathan Zwiebel","Project Manager","jzwiebel@palyrobotics.com"],
+
+  4: ["James Ngo","Chief Glue","jngo@palyrobotics.com"],
+
+  5:["Lauren Nolen","Strategic Director","lnolen@palyrobotics.com"],
+
+  6:["Devin Ardeshna","Build Captain","dardeshna@palyrobotics.com"],
   
-  3:["Devin Ardeshna","Build Captain","dardeshna [at] palyrobotics [dot] com"],
+  7:["Nihar Mitra","Programming Captain","nmitra@palyrobotics.com"],
   
-  4:["Nihar Mitra","Programming Captain","nmitra [at] palyrobotics [dot] com"],
+  8:["Charlotte Brownell","Design Captain","cbrownell@palyrobotics.com"],
   
-  5:["Charlotte Brownell","Design Captain","cbrownell [at] palyrobotics [dot] com"],
+  9:["Annalee Soohoo","Business Captain","asoohoo@palyrobotics.com"],
   
-  6:["Annalee Soohoo","Business Captain","asoohoo [at] palyrobotics [dot] com"],
+  10:["Maya Chin","Art Captain","mchin@palyrobotics.com"],
+
+  11:["Madeline Li","Web Captain","mli@palyrobotics.com"],
+
+  12:["Liam Sherlock","Competition Manager","lsherlock@palyrobotics.com"],
   
-  7:["Maya Chin","Art Captain","mchin [at] palyrobotics [dot] com"],
+  13:["Shota Yamamoto","Lab Manager","syamamoto@palyrobotics.com"],
+
+  14:["Eddie Shi","Pit Manager","eshi@palyrobotics.com"],
   
-  8:["Shota Yamamoto","Lab Manager","syamamoto [at] palyrobotics [dot] com"],
-  
-  9:["Kendall Shaw","Treasurer","kshaw [at] palyrobotics [dot] com"]
+  15:["Kendall Shaw","Treasurer","kshaw@palyrobotics.com"]
 }
 
 Object.size = function(obj) {
@@ -198,9 +215,10 @@ for (var i = 0; i < indexArr.length; i++){
 	innerHTML += "<div class=\"row\">";
 	var itemsArr = indexArr[i];
 	for (var ix = 0; ix < itemsArr.length; ix++){
-		innerHTML += "<div class=\"col-md-3\"><img src=\"images/placeholder.png\" class=\"img-circle center-block\" /><div class=\"name-and-role\">";
+		innerHTML += "<div class=\"col-md-3\"><img src=\"images/placeholder-200x200.jpeg\" class=\"img-circle center-block\" /><div class=\"name-and-role\">";
 		innerHTML += "<p class=\"name\">" + data[(itemsArr[ix])][0] + "</p>";
-		innerHTML += "<p class=\"role\" center-block>" + data[(itemsArr[ix])][1] + "</p>" + "<span class=\"glyphicon glyphicon-envelope\">";
+		innerHTML += "<p class=\"role\">" + data[(itemsArr[ix])][1] + "</p>";
+		// innerHTML += "<i class=\"glyphicon glyphicon-envelope\"></i>"
 		// innerHTML += "<a href=\"mailto:" + data[(itemsArr[ix])][1] + "\" class=\"glyphicon glyphicon-envelope\">"
 		innerHTML += "</div></div>";
 	}
