@@ -16,7 +16,7 @@
     <link href="css/stylesheet.css" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
     <script type='text/javascript'>
-            $(document).ready(function() {
+    $(document).ready(function() {
                  $(document).ready(function () {
     $('#calendar').fullCalendar({
         googleCalendarApiKey : 'AIzaSyDIQZLuITK90tlTtdHN4cSkdLW9aRznnL4',
@@ -24,11 +24,9 @@
             googleCalendarId : 'db25n7oev1at726gljle5d784c@group.calendar.google.com'
         }
     });
-    $(window).resize(function () {
+    $(document).ready(function() {
         if ((($(window).width() / $(window).height()) < 0.95)) {
             $('#calendar').fullCalendar('changeView', "agendaWeek") //Change this accordingly
-        } else {
-            $('#calendar').fullCalendar('changeView', "month") //Change this accordingly
         }
     });
  });
@@ -112,6 +110,12 @@
             margin-bottom:40px !important;
         }
     </style>
+
+  <script type="text/javascript">
+        $(document).ready(function() {
+          console.log($("#nav-bot").height());
+        });
+  </script>
 
 
 
