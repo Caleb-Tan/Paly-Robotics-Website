@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-	
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,6 +11,7 @@
 	<!-- Bootstrap -->
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/stylesheet.css" rel="stylesheet">
+
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -73,82 +73,52 @@
 	<!-- Body ends here -->
 
 	<!-- Contact stuff begins here -->
-	<div class="container" id = "collapse-other" >
-		<!--KENNY-->
-	  <div class = "row">
-		<div class="col-md-3">
-			<a data-toggle="collapse" data-target="#0a,#0" data-parent = "#collapse-other">
-			    <img src="images/placeholder-200x200.jpeg" class="img-circle person center-block" alt="Random Name" width="255" height="255">
-			</a>
-			<div class="name-and-role">
-				<p class="name">Kenny Cheung</p>
-				<p class="role">Team Captain</p>
-			</div>
-  			<i class="glyphicon glyphicon-triangle-top collapse out" id="0a"></i>
-  		</div>
-  	
-  		<!--KENNY-->	
-
-  		<!--Simran Pujji-->
-  	
-  		<div class="col-md-3">
-			<a data-toggle="collapse" data-target="#1a,#1" data-parent = "collapse-other">
-			    <img src="images/placeholder-200x200.jpeg" class="img-circle person center-block" alt="Random Name" width="255" height="255">
-			</a>
-			<div class="name-and-role">
-				<p class="name">Simran Pujji</p>
-				<p class="role">Assistant Captain</p>
-			</div>
-  			<i class="glyphicon glyphicon-triangle-top collapse out" id="1a"></i>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3">
+				<a data-toggle="collapse" data-target="#0a,#0">
+			    	<img src="images/placeholder-200x200.jpeg" class="img-circle person center-block " alt="Random Name" width="255" height="255" onclick="hideDescription(0);">
+				</a>
+				<div class="name-and-role">
+					<p class="name">Kenny Cheung</p>
+					<p class="role">Team Captain</p>
+				</div>
+  				<i class="glyphicon glyphicon-triangle-top collapse out" id="0a"></i>
+  			</div>
+  			<div class="col-md-3">
+				<a data-toggle="collapse" data-target="#1a,#1">
+			    	<img src="images/placeholder-200x200.jpeg" class="img-circle person center-block " alt="Random Name" width="255" height="255" onclick="hideDescription(1);">
+				</a>
+				<div class="name-and-role">
+					<p class="name">Simran Pujji</p>
+					<p class="role">Assistant Captain</p>
+				</div>
+  				<i class="glyphicon glyphicon-triangle-top collapse out" id="1a"></i>
+  			</div>
   		</div>
 
   		<div class="col-md-12">
-  			<div id="1" class="collapse out paragraph">
-<!--   				<i class="glyphicon glyphicon-triangle-top"></i> -->
-  				<p class="paragraph-text">
-    			Simran is a junior and a two-year veteran of Team 8. She used to be on build team. Mucho Mangoes (#youdidntseethiscoming), forklifts (not a certified operator), rivets (of all varieties), cargo pants o_o, and wearing his 2014 robotics polo (:kenny:).
-    			</p>
-  			</div>
-  		</div>
-<!--Simran Puiji-->
-	
-	  	<div class="col-md-12">
   			<div id="0" class="collapse out paragraph">
-<!--   				<i class="glyphicon glyphicon-triangle-top"></i> -->
   				<p class="paragraph-text">
     			Kenny is a senior and a three-year veteran of Team 8. He was formerly Lab Manager his sophomore year and Build Captain his junior year. He was a FIRST Dean's List Semifinalist in 2016. As Team Captain, he will focus on moving the team forward to inspire new members, expand its technical abilities, and to improve its own organizational structure. Kenny enjoys random facts (did you know?), Mucho Mangoes (#youdidntseethiscoming), forklifts (not a certified operator), rivets (of all varieties), cargo pants o_o, and wearing his 2014 robotics polo (:kenny:).
     			</p>
   			</div>
   		</div>
 
-
-
+  		<div class="col-md-12">
+  			<div id="1" class="collapse out paragraph">
+  				<p class="paragraph-text">
+  				Simran paragraph.
+    			</p>
+  			</div>
+  		</div>
 	</div>
- </div>
-
-
 	<!-- Body ends here -->
-
-	<!-- Footer begins here -->
-<!-- 	<div class="navbar navbar-inverse navbar-static-bottom nav-bot" role="navigation">
-		<div class="container foot">
-			<div class="navbar-text pull-left">
-				<p class="footer">© Paly Robotics 2016</p>
-			</div>
-			<div class="navbar-text pull-right">
-				<a href="https://www.facebook.com/PalyRobotics/" target="_blank"><i class="fa fa-facebook-square fa-2x facebook"></i></a>
-				<a href="https://twitter.com/frc8?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank"><i class="fa fa-twitter fa-2x twitter twitter"></i></a>
-				<a href="https://www.youtube.com/channel/UCxDYmpiPO5we91MfFKfWzsQ" target="_blank"><i class="fa fa-youtube-play fa-2x youtube"></i></a>
-			</div>
-		</div>
-	</div> -->
-	<!-- Footer ends here -->
 
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
 	<script src="js/bootstrap.min.js"></script>
-
 </body>
 
 <style>
@@ -176,6 +146,7 @@
 		font-family: 'Poppins', sans-serif;
 		font-size: 48px;
 	}
+
 	body{
 		font-family: 'Poppins', sans-serif;
 	}
@@ -219,25 +190,21 @@
 		display: none;
 	}
 
-	.module{
-		resize: inherit;
-	}
-
-	
-
-
 </style>
-
 <script type="text/javascript">
 var data = {
   0:["Chris Kuszmaul","Head Coach","ckuszmaul@palyrobotics.com"],
+
   1:["Kenny Cheung","Team Captain","kcheung@palyrobotics.com"],
   
   2:["Simran Pujji","Assistant Captain","spujji@palyrobotics.com"],
   
   3:["Jonathan Zwiebel","Project Manager","jzwiebel@palyrobotics.com"],
+
   4: ["James Ngo","Chief Glue","jngo@palyrobotics.com"],
+
   5:["Lauren Nolen","Strategic Director","lnolen@palyrobotics.com"],
+
   6:["Devin Ardeshna","Build Captain","dardeshna@palyrobotics.com"],
   
   7:["Nihar Mitra","Programming Captain","nmitra@palyrobotics.com"],
@@ -247,14 +214,18 @@ var data = {
   9:["Annalee Soohoo","Business Captain","asoohoo@palyrobotics.com"],
   
   10:["Maya Chin","Art Captain","mchin@palyrobotics.com"],
+
   11:["Madeline Li","Web Captain","mli@palyrobotics.com"],
+
   12:["Liam Sherlock","Competition Manager","lsherlock@palyrobotics.com"],
   
   13:["Shota Yamamoto","Lab Manager","syamamoto@palyrobotics.com"],
+
   14:["Eddie Shi","Pit Manager","eshi@palyrobotics.com"],
   
   15:["Kendall Shaw","Treasurer","kshaw@palyrobotics.com"]
 }
+
 Object.size = function(obj) {
     var size = 0, key;
     for (key in obj) {
@@ -262,12 +233,15 @@ Object.size = function(obj) {
     }
     return size;
 };
+
 // Get the size of an object
 var size = Object.size(data);
 var numberOfItems = 4;
 var rows = Math.ceil(size / numberOfItems);
 var innerHTML = "";
 var currentRow = 1;
+
+
 var indexArr = [];
 for (var i = 0; i < rows; i++){
 	var innerArr = [];
@@ -293,25 +267,27 @@ for (var i = 0; i < indexArr.length; i++){
 		innerHTML += "\n</div>\n</div>";
 	}
 	innerHTML += "\n</div>";
+
 }
 console.log(innerHTML);
+
+var current = "none";
+function hideDescription(param){
+	if (current == "none"){
+		current = param;
+	}else if(current == param){
+		current == "none";
+	}else{
+
+		// document.getElementById("#" + current).aria-expanded = false;
+		// document.getElementById("#" + current + "a").aria-expanded = false;
+		document.getElementById(current).className = document.getElementById(current).className.replace( /(?:^|\s)in(?!\S)/g , '' );
+		document.getElementById(current + "a").className = document.getElementById(current + "a").className.replace( /(?:^|\s)in(?!\S)/g , '' );
+		current = param;
+	}
+
+}
 // document.getElementById("js-add").innerHTML = innerHTML;
-
-
-var $myGroup = $('#collapse-other');
-$myGroup.on('show.bs.collapse','.collapse', function() {
-    $myGroup.find('.collapse.in').collapse('hide');
-});
-
-
-
-
-
-
-
-
-
-
 </script>
 
 </html>
